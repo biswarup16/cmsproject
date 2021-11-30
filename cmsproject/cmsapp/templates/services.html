@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Services{% endblock title %}
+{% block servicesactive %}active{% endblock servicesactive %}
+
+{% block body %}
+
+<div class="container-fluid py-5" style="background-color: #dcdeee;">
+
+<h1 class="text-center mt-5" style="font-weight:bold !important; margin-top:70px!important">Our Services</h2>
+
+<div class="container mt-5" style="margin-top:70px!important;margin-bottom:70px!important">
+    <div class="row d-flex justify-content-center">
+        {% for x in cards %}
+
+
+
+        <div class="col-lg-3 d-flex justify-content-center">
+            <div class="card" style="width: 18rem;">
+                <img src="{{x.photo.url}}" height="250px" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text" >{{x.description}}</p>
+                </div>
+                {% comment %} <button class="btn btn-dark p-2">Read More...</button> {% endcomment %}
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+</div>
+
+{% endblock body %}

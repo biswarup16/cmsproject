@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block title %}About{% endblock title %} {% block aboutactive %}active{% endblock aboutactive %} {% block body %}
+
+<div class="container-fluid py-5" style="background-color: #dcdeee;">
+
+    <h1 class="text-center mt-5" style="font-weight:bold !important; margin-top:70px!important">About Us</h1>
+
+
+    <div class="container mt-5" style="margin-bottom:70px!important">
+        <div class="row ">
+            {% for s in about %}
+
+            <div class="col-lg-6 ">
+                <img src="{{s.aboutpic.url}}" class="img-fluid" alt="">
+            </div>
+
+            <div class="col-lg-6 mt-5">
+                <p style="text-align: justify; font-weight: 500;">{{s.aboutdesc}}</p>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+{% endblock body %}
